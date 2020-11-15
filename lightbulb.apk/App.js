@@ -1,21 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { Text, StyleSheet, SafeAreaView } from "react-native";
+import LightBulbContainer from './LightBulbContainer';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.area}>
+      <StatusBar style="light" />
+      <Text style={styles.title}>Presiona la bombilla</Text>
+      <LightBulbContainer />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  area: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#222222",
+  },
+  title: {
+    color: "#fff",
+    fontSize: 20,
+    marginBottom: 64,
   },
 });
